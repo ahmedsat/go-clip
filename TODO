@@ -1,3 +1,6 @@
-TODO: add arguments to server app 
-TODO: make daemon and clint in one binary 
+TODO: Write some comment
+TODO: get read of cobra dependency
 TODO: Write Docs 
+TODO: Write man page
+TODO: Write some use cases
+TODO: add support for anther network types currently "unix" only supported

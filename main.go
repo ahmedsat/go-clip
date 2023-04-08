@@ -1,31 +1,11 @@
+/*
+Copyright © 2023 NAME HERE <EMAIL ADDRESS>
+*/
 package main
 
-import (
-	"fmt"
-	"log"
-	"net"
-	"net/http"
-	"net/rpc"
-	"os"
-
-	"github.com/ahmedsat/go-clip/handlers"
-)
-
-const SockAddr = "/tmp/rpc.sock"
+import "github.com/ahmedsat/go-clip/cmd"
 
 func main() {
 
-	if err := os.RemoveAll(SockAddr); err != nil {
-		log.Fatal(err)
-	}
-
-	clip := new(handlers.Clip)
-	rpc.Register(clip)
-	rpc.HandleHTTP()
-	l, e := net.Listen("unix", SockAddr)
-	if e != nil {
-		log.Fatal("listen error:", e)
-	}
-	fmt.Println("Serving...")
-	http.Serve(l, nil)
+	cmd.Execute()
 }

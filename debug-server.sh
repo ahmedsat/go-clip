@@ -11,4 +11,4 @@ go mod tidy &&
 
 go build -v -tags debug -o $outBath/$out && 
 
-./$outBath/$out
+./$outBath/$out $*
